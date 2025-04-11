@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barrio&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:wght@900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    max-width: 100%;
+    background-color: rgb(9, 9, 49);
+    background-image: linear-gradient(rgb(4, 4, 43), black);
+}
+header{
+    width: 100%;
+    height: 20vh;
+}
+nav{
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgb(9, 9, 49);
+    z-index: 20;
+}
+nav ul{
+    width: 100%;    /** To ensure that it spans the whole page**/
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;          /** elements go to the right **/
+    align-items: center;
+    z-index: 21;
+    font-size: 1.3rem;
+    font-weight: bolder;
+}
+nav li{
+    height: 50px;
+    z-index: 22;
+}
+nav a{
+    height: 100%; /** to make match the height of the listed items **/
+    padding: 0 30px;
+    text-decoration: none;      /** no blue color **/
+    display: flex;
+    align-items: center;
+    color: black;
+    z-index: 22;
+}
+nav a:hover{
+    background-color: grey;
+}
+nav li:first-child{
+    margin-right: auto;     /** This is to make "logo" go to the left, and "home" and others go to the right**/
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;      /** fill the whole height of the screen **/
+    width: 250px;
+    z-index: 999;       /** so that it will always be above every other thing **/
+    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;  /** element will not display * */
+    flex-direction: column;             /** make the list be in a column manner **/
+    align-items: flex-start;          /* * make the list go the left, uncenter **/
+    justify-content: flex-start;        /** make the list go up **/
+}
+/** make each list fill the sidebar individually **/
+.sidebar li{
+    width: 100%;
+}
+.sidebar a{
+    width: 100%;
+    color: white;
+}
+.menu-botton{
+    display: none;      /** hides menu button **/
+}
+.displayPicture{
+    display: grid;
+    place-items: center;
+    max-width: 100%;
+    height: 50vh;
+}
+.image{
+    width: 60%;
+    height: 90%;
+    position: relative;
+   clip-path: circle();
+   background-image: url("profileImage.jpg");
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: contain;
+}
+.Details{
+    max-width: 100%;
+    background-color: beige;
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: grid;
+    place-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 5%;
+    padding: 2%;
+}
+.description{
+    font-size: 1.5rem;
+    padding: 10px;
+    color: white;
+}
+.academicDetails{
+    width: 70vw;
+    background-color: black;
+    color: white;
+    transition: all ease-in-out 0.1s;
+    cursor: default;
+    border-radius: 5px;
+    display: flex;
+    padding: 2%;
+}
+.edu_background{
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    padding: 10px;
+}
+ul, li{
+    list-style: none;
+}
+.projectsContainer{
+    width: 100%;
+    height: 40vh;
+    color: white;
+    transition: all ease-in-out 0.1s;
+    cursor: default;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2%;
+}
+.projectCard{
+    height: 100%;
+    width: 20vw;
+    position: relative;
+    background-color: rgb(11, 11, 77);
+    background-image: linear-gradient(rgb(7, 7, 82), black);
+}
+.projectCardDetails{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    opacity: 1;
+    transition: all 0.5s;
+    color: white;
+}
+.projectCard h3{
+    font-size: 1.25rem;
+}
+.photosSection{
+    display: grid;
+    color: whitesmoke;
+    align-items: center;
+    padding: 5%;
+}
+.Photos{
+   display: grid;
+    padding: 5vh 2.8rem;
+    grid-template-columns: repeat(auto-fit, minmax(18vw, 0.8fr));
+    gap: 2.25rem;
+}
+.photo_card{
+    width: 15vw;
+    height: 35vh;
+    color: white;
+    position: relative;
+    transition: all ease-in-out 0.2s;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card_details{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: all 0.5s;
+    color: white; 
+}
+.card_details:hover{
+    opacity: 1;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+hr{
+    width: 60%;
+}
+footer{
+    max-width: 100%;
+    height: 50vh;
+    display: grid;
+    background-color: rgb(21, 21, 24);
+    color: whitesmoke;
+    padding-left: 40px;
+    padding-top: 50px;
+}
+footer hr{
+    width: 30%;
+}
+footer .contactInfo{
+    font-size: 1.25rem;
+}
+footer .copyright{
+    font-size: smaller;
+    font-weight: bolder;
+}
+@media(max-width: 800px) {      
+    .hideOnMobile{              
+        display: none;             /** hides the home, shop and login with when width is less than 800**/
+    }
+    .menu-botton{
+        display: block;             /** shows the menu button when width is less than 800**/
+    }
+}
+@media(max-width: 400px) {      /** sidebar takes full screen when width is less than 400**/
+    .sidebar{
+        width: 100%;
+    }
+}
